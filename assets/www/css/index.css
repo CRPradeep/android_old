@@ -94,3 +94,37 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.pagination{
+	position: absolute;
+	text-align: center;
+	left: 0;
+	bottom: 0; 
+	width: 100%;
+	line-height: 40px;
+	height: 40px;
+	z-index: 2000;
+}
+
+.tabs{
+	border-bottom: 2px solid #007FFF;
+}
+
+.swiper-wrapper{
+
+}
+
+.screen-one, .tab-one{
+
+	text-align: center;
+}
+
+.screen-two, .tab-two{
+
+	text-align: center;
+}
+
+.screen-three, .tab-three{
+
+	text-align: center;
+}
