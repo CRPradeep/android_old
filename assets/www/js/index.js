@@ -39,15 +39,16 @@ var app = {
 		onDeviceReady: function() {
 			app.setScreenBounds();
 			app.receivedEvent('deviceready');
+			app.alignTabContent();
 		},
 		// Update DOM on a Received Event
 		receivedEvent: function(id) {
-
 			myTabs = $('.tabs').swiper({
 				mode:'horizontal',
 				slidesPerView : 1.5,
 				initialSlide : 2,
 				offsetSlidesBefore : 0.25,
+				offsetPxAfter : 100,
 				shortSwipes : true,
 				onSlideChangeEnd: app.onTabChanged,
 				loop: false
@@ -55,11 +56,9 @@ var app = {
 
 			mySwiper = $('.swiper-container').swiper({
 				mode:'horizontal',
-				slidesPerView : 1.5,
 				initialSlide : 2,
-				offsetSlidesBefore : 0.25,
 				shortSwipes : true,
-				pagination:document.getElementById("pagination"),
+				pagination: document.getElementById("pagination"),
 				createPagination : true,
 				paginationClickable: true,
 				onSlideChangeEnd: app.onSlideChanged,
@@ -69,12 +68,32 @@ var app = {
 
 		onSlideChanged : function(e){
 			myTabs.swipeTo(mySwiper.activeIndex, 0, false);
+			app.alignTabContent();	
 		},
 		
 		onTabChanged : function(e){
-			mySwiper.swipeTo(myTabs.activeIndex, 0, false);
+			mySwiper.swipeTo(myTabs.activeIndex, 0, false);	
+			
+			app.alignTabContent();
 		},
 
+		alignTabContent : function(){
+			var _activeIndex = myTabs.activeIndex;
+			if(_activeIndex != mySwiper.getFirstSlide().index()){
+				var prevEle = myTabs.getSlide(_activeIndex-1);				
+				$(prevEle).css('text-align','right').trigger("true", 500);
+				$(prevEle).css('color','gray').trigger("true");
+			}
+			if(_activeIndex != mySwiper.getLastSlide().index()){
+				var nextEle = myTabs.getSlide(_activeIndex+1);				
+				$(nextEle).css('text-align','left').trigger("true", 500);	
+				$(nextEle).css('color','gray').trigger("true");
+			}
+			var currEle = myTabs.getSlide(_activeIndex);
+			$(currEle).css('text-align','center').trigger("true", 500);
+			$(currEle).css('color','black').trigger("true");
+		},
+		
 		setScreenBounds: function(){
 			var availableWidth = window.screen.availWidth;
 			var availableHeight = window.screen.availHeight;

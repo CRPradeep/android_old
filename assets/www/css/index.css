@@ -110,8 +110,16 @@ h1 {
 	border-bottom: 2px solid #007FFF;
 }
 
+.tab span{
+	line-height: 50px;
+}
+
 .swiper-wrapper{
 
+}
+
+.swiper-slide-active.tab{
+	border-bottom: 2px solid orangered;
 }
 
 .screen-one, .tab-one{
