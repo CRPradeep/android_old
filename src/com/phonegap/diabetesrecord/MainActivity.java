@@ -30,6 +30,6 @@ public class MainActivity extends CordovaActivity
         super.onCreate(savedInstanceState);
         super.init();
         super.setIntegerProperty("splashscreen", R.drawable.app_icon_big);
-        super.loadUrl("file:///android_asset/www/index.html", 2000);
+        super.loadUrl("file:///android_asset/www/index.html", 5000);
     }
 }

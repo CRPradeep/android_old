@@ -67,7 +67,7 @@
         value="true" />
     <preference
         name="auto-hide-splash-screen"
-        value="true" />
+        value="false" />
     <preference
         name="disable-cursor"
         value="false" />

@@ -37,26 +37,29 @@ var app = {
 		// The scope of 'this' is the event. In order to call the 'receivedEvent'
 		// function, we must explicity call 'app.receivedEvent(...);'
 		onDeviceReady: function() {
-			app.setScreenBounds();
-			app.receivedEvent('deviceready');
-			app.alignTabContent();
+			navigator.splashscreen.hide();
 		},
-		// Update DOM on a Received Event
-		receivedEvent: function(id) {
+		
+		initializeTabs: function(){
 			myTabs = $('.tabs').swiper({
 				mode:'horizontal',
 				slidesPerView : 1.5,
-				initialSlide : 2,
 				offsetSlidesBefore : 0.25,
 				offsetPxAfter : 100,
 				shortSwipes : true,
 				onSlideChangeEnd: app.onTabChanged,
 				loop: false
-			}); 
-
+			});
+			setTimeout(function(){
+				app.alignTabContent();	
+			}, 500);
+			
+		},
+		
+		initializeSwiperScreen: function(){
+			app.setScreenBounds();
 			mySwiper = $('.swiper-container').swiper({
 				mode:'horizontal',
-				initialSlide : 2,
 				shortSwipes : true,
 				pagination: document.getElementById("pagination"),
 				createPagination : true,
@@ -64,8 +67,9 @@ var app = {
 				onSlideChangeEnd: app.onSlideChanged,
 				loop: false
 			}); 
+			app.alignTabContent();
 		},
-
+		
 		onSlideChanged : function(e){
 			myTabs.swipeTo(mySwiper.activeIndex, 0, false);
 			app.alignTabContent();	
@@ -103,8 +107,7 @@ var app = {
 			if(window.orientation != 0){
 				var height = availableHeight > availableWidth ? availableWidth : availableHeight;
 			}
-
-			$(".tabs").css("height", 50+"px").trigger("true");
+			
 			$(".swiper-container").css("height", (height-52)+"px").trigger("true");
 		}    
 };

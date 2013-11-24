@@ -108,6 +108,15 @@ h1 {
 
 .tabs{
 	border-bottom: 2px solid #007FFF;
+	height: 50px;
+}
+
+.login_btn{
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	font-size: 5em;
+	line-height: 8;
 }
 
 .tab span{
