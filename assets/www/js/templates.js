@@ -8,11 +8,11 @@ sampleApp.config(['$routeProvider',
                   function($routeProvider) {
 	$routeProvider.
 	when('/reports', {
-		templateUrl: 'reports.html',
+		templateUrl: 'templates/reports.html',
 		controller: 'AddSwiperScreenController'
 	}).
 	when('/home', {
-		templateUrl: 'home.html',
+		templateUrl: 'templates/login.html',
 		controller: 'AddHomeController'
 	}).
 	otherwise({
