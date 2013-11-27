@@ -24,9 +24,11 @@ sampleApp.config(['$routeProvider',
 sampleApp.controller('AddSwiperScreenController', function($scope) {
 	$scope.message = 'This is Swiper screen';
 	app.initializeTabs();
-	app.initializeSwiperScreen();
+	app.initializeSwiperScreen();	
+	app.refreshView();
 });
 
 sampleApp.controller('AddHomeController', function($scope) {
 	$scope.message = 'This is Home screen';
+	app.refreshView();
 });

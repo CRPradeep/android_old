@@ -109,5 +109,9 @@ var app = {
 			}
 			
 			$(".swiper-container").css("height", (height-52)+"px").trigger("true");
-		}    
+		},
+		
+		refreshView: function(){
+			$(".apps").trigger("create");
+		}
 };

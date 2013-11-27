@@ -111,37 +111,42 @@ h1 {
 	height: 50px;
 }
 
+.home_wrapper{	
+	border-left: none;
+	margin-top: 50%;
+	padding: 5% 0;
+	text-align: center;
+}
+
+.login_btn_holder{
+	float: left;
+	border: 2px solid gray;
+}
+
 .login_btn{
+	width:200px;	
 	text-decoration: none;
 	text-align: center;
-	font-weight: bold;
 	font-size: 5em;
-	line-height: 8;
+	padding: 10px;
+	text-shadow: 2px 2px 2px gray;
+}
+
+.google_logo{
+	width: 75px;
+	height: 75px;
+	background: url("../img/google.png");
+	display: inline-block;
 }
 
 .tab span{
 	line-height: 50px;
 }
 
-.swiper-wrapper{
-
-}
-
 .swiper-slide-active.tab{
 	border-bottom: 2px solid orangered;
 }
 
-.screen-one, .tab-one{
-
-	text-align: center;
-}
-
-.screen-two, .tab-two{
-
-	text-align: center;
-}
-
-.screen-three, .tab-three{
-
+.screen-one, .tab-one, .screen-two, .tab-two, .screen-three, .tab-three{
 	text-align: center;
 }
