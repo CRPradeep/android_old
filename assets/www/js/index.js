@@ -27,10 +27,10 @@ var app = {
 		// 'load', 'deviceready', 'offline', and 'online'.
 		bindEvents: function() {
 			document.addEventListener('deviceready', this.onDeviceReady, false);
-			var supportsOrientationChange = "onorientationchange" in window,
+			/*var supportsOrientationChange = "onorientationchange" in window,
 			orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-			window.addEventListener(orientationEvent, this.setScreenBounds, false);
+			window.addEventListener(orientationEvent, this.setScreenBounds, false);*/
 		},
 		// deviceready Event Handler
 		//
@@ -109,9 +109,11 @@ var app = {
 			}
 			
 			$(".swiper-container").css("height", (height-52)+"px").trigger("true");
+			$(".home_wrapper").css("height", height+"px").trigger("true");
+			
 		},
 		
 		refreshView: function(){
 			$(".apps").trigger("create");
-		}
+		},
 };

@@ -111,32 +111,46 @@ h1 {
 	height: 50px;
 }
 
-.home_wrapper{	
-	border-left: none;
-	margin-top: 50%;
-	padding: 5% 0;
-	text-align: center;
+.home_wrapper{
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background: url("../img/app_icon_big.9.png") center no-repeat;
+	background-color: #e4eefa;
 }
 
 .login_btn_holder{
 	float: left;
-	border: 2px solid gray;
+	padding-top:5px;
+	margin-top: 65%;
+	border: 3px solid #8284db;
+	border-left: none;
+	box-shadow: 4px 4px 8px #4b4b4b;
+	-webkit-box-shadow: 4px 4px 8px #4b4b4b;
+	background: #e4fafa;
 }
 
-.login_btn{
-	width:200px;	
+.login_btn{	
 	text-decoration: none;
-	text-align: center;
 	font-size: 5em;
-	padding: 10px;
 	text-shadow: 2px 2px 2px gray;
 }
 
+.login_txt{
+	float: left;
+}
+
 .google_logo{
-	width: 75px;
-	height: 75px;
-	background: url("../img/google.png");
+	width: 50px;
+	height: 50px;
 	display: inline-block;
+	margin: 8px 10px 0 10px;
+	border: 1px solid #999;
+	border-radius:6px;
+	background-size: 50px;
+	background: url("../img/google.png") center no-repeat;
+	box-shadow: 2px 2px 5px #d7d7d7;
+	-webkit-box-shadow: 2px 2px 5px #d7d7d7;
 }
 
 .tab span{
