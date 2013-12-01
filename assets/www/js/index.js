@@ -47,6 +47,9 @@ var app = {
 				offsetSlidesBefore : 0.25,
 				offsetPxAfter : 100,
 				shortSwipes : true,
+				pagination: document.getElementById("pagination"),
+				createPagination : true,
+				paginationClickable: true,
 				onSlideChangeEnd: app.onTabChanged,
 				loop: false
 			});
@@ -61,9 +64,6 @@ var app = {
 			mySwiper = $('.swiper-container').swiper({
 				mode:'horizontal',
 				shortSwipes : true,
-				pagination: document.getElementById("pagination"),
-				createPagination : true,
-				paginationClickable: true,
 				onSlideChangeEnd: app.onSlideChanged,
 				loop: false
 			}); 
@@ -108,7 +108,7 @@ var app = {
 				var height = availableHeight > availableWidth ? availableWidth : availableHeight;
 			}
 			
-			$(".swiper-container").css("height", (height-52)+"px").trigger("true");
+			$(".swiper-container").css("height", (height-55)+"px").trigger("true");
 			$(".home_wrapper").css("height", height+"px").trigger("true");
 			
 		},
