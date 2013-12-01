@@ -95,6 +95,27 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
+.clear{
+	clear: both;
+}
+
+#settings_blk div.ui-input-text{
+	display: inline-block;
+	width: 75% !important;
+	float: right;
+}
+
+#settings_blk label{
+	display: inline-block;
+	padding: 0.4em 0em;
+	margin: .5em 0;
+	text-align: left;
+}
+
+#settings_blk div < input{
+	/* width:80% !important; */
+}
+
 .pagination{
 	width: 100%;
 	height: 10px;
@@ -168,4 +189,12 @@ h1 {
 }*/
 .screen-one, .tab-one, .screen-two, .tab-two, .screen-three, .tab-three{
 	text-align: center;
+}
+
+.ui-collapsible-set, .ui-collapsible{
+	padding: 0 5%;
+}
+
+.ui-collapsible{
+	border: 1px solid #007FFF;
 }

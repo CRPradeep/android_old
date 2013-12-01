@@ -14,7 +14,7 @@ sampleApp.config(['$routeProvider',
 		controller: 'AddHomeController'
 	}).
 	otherwise({
-		redirectTo: '/home'
+		redirectTo: '/reports'
 	});
 }]);
 
@@ -49,4 +49,9 @@ sampleApp.controller('AddHomeController', function($scope, $location) {
 		}, function(error) {alert("Sorry. Your device is not registered with google");}, "GetGoogleAccPlugin",
 		"GET_GOOGLE_ACC", []);
 	}
+});
+
+sampleApp.controller('SettingsController', function($scope) {
+	$scope.message = 'This is Settings screen';
+	app.refreshView();	
 });

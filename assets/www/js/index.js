@@ -46,6 +46,7 @@ var app = {
 				slidesPerView : 1.5,
 				offsetSlidesBefore : 0.25,
 				offsetPxAfter : 100,
+				initialSlide: 2,
 				shortSwipes : true,
 				pagination: document.getElementById("pagination"),
 				createPagination : true,
@@ -64,6 +65,7 @@ var app = {
 			mySwiper = $('.swiper-container').swiper({
 				mode:'horizontal',
 				shortSwipes : true,
+				initialSlide: 2,
 				onSlideChangeEnd: app.onSlideChanged,
 				loop: false
 			}); 
