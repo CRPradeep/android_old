@@ -107,13 +107,25 @@ h1 {
 
 #settings_blk label{
 	display: inline-block;
-	padding: 0.4em 0em;
 	margin: .5em 0;
 	text-align: left;
 }
 
-#settings_blk div < input{
-	/* width:80% !important; */
+.sex_block .ui-btn-inner {
+border: none;
+}
+
+.sex_block .ui-controlgroup-label{
+	width: 0 !important;
+	margin-left: 10px !important;
+	margin-top: 5px !important;
+	float: left;
+}
+
+.sex_block  .ui-controlgroup-controls{
+	width: 60% !important;
+	margin: 0 !important;
+	margin-left: -10px !important;
 }
 
 .pagination{

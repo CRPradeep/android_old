@@ -33,25 +33,39 @@
 					<div class="name_block user_sett_pad">
 						<label for="name_field">Name: </label><input type="text" id="name_field" />
 					</div>
+					
 					<div class="clear"></div>
+					
 					<div class="age_block user_sett_pad">
 						<label for="age_field">Age: </label><input type="number" id="age_field"/>
 					</div>
+					
 					<div class="clear"></div>
-					<div class="sex_block user_sett_pad">
-						<label for="sex_field_male">Male: </label><input type="radio" id="sex_field_male"/>
-						<label for="sex_field_female">Female: </label><input type="radio" id="sex_field_female"/>
+					
+					<div class="sex_block user_sett_pad">					
+						<div data-role="fieldcontain">
+						    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+						    	<legend>Sex:</legend>
+					         	<input type="radio" name="radio-choice-2" id="sex_male" value="Male" checked="checked" />
+					         	<label for="sex_male">Male</label>
+					
+					         	<input type="radio" name="radio-choice-2" id="sex_female" value="Female"  />
+					         	<label for="sex_female">Female</label>
+						    </fieldset>
+						</div>					
 					</div>
 					</div>
+					
 					<div class="clear"></div>
+					
 					<div data-role="collapsible">
-					<h3>Alarm Settings</h3>
-					<p>Some Alarm Settings Goes Here...</p>
+						<h3>Alarm Settings</h3>
+						<p>Some Alarm Settings Goes Here...</p>
 					</div>
 					
 					<div data-role="collapsible">
-					<h3>Notification Settings</h3>
-					<p>Some Notification Settings Goes Here...</p>
+						<h3>Notification Settings</h3>
+						<p>Some Notification Settings Goes Here...</p>
 					</div>					
 				</div>
 			</div>
