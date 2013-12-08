@@ -24,13 +24,19 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	app.initializeTabs();
 	app.initializeSwiperScreen();	
 	app.refreshView();	
+	
+	$scope.user = {name : 'prad', age: '22'};
+	$scope.save = function(as){
+		alert(as);
+	}
+	
 });
 
 sampleApp.controller('AddHomeController', function($scope, $location) {
 	$scope.message = 'This is Home screen';
 	app.setScreenBounds();
-	app.refreshView();
-
+	app.refreshView();	
+	
 	$scope.goto = function(path){
 		cordova.exec(function(successObj) {
 			if(successObj != null && successObj.length >0){
@@ -49,9 +55,4 @@ sampleApp.controller('AddHomeController', function($scope, $location) {
 		}, function(error) {alert("Sorry. Your device is not registered with google");}, "GetGoogleAccPlugin",
 		"GET_GOOGLE_ACC", []);
 	}
-});
-
-sampleApp.controller('SettingsController', function($scope) {
-	$scope.message = 'This is Settings screen';
-	app.refreshView();	
 });

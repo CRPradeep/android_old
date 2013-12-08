@@ -67,7 +67,8 @@ var app = {
 				shortSwipes : true,
 				initialSlide: 2,
 				onSlideChangeEnd: app.onSlideChanged,
-				loop: false
+				loop: false,
+				simulateTouch: false
 			}); 
 			app.alignTabContent();
 		},

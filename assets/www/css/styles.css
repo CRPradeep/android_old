@@ -210,3 +210,29 @@ border: none;
 .ui-collapsible{
 	border: 1px solid #007FFF;
 }
+
+.details_wrapper{
+	padding: 5%;
+	height: 95%;	
+}
+
+.details_table{
+	width: 100%;
+	height: 50%;
+	border: 2px solid #007FFF;
+	background: #F0F8FF;
+}
+
+.details_table td{
+	text-align: left;
+	padding: 1em;
+	word-break: break-word;
+}
+
+.details_table tr{
+	
+}
+
+.td_label{
+	width: 35%;
+}
