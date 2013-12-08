@@ -1,5 +1,5 @@
 //Define an angular module for our app
-var sampleApp = angular.module('sampleApp', ['ngRoute']);
+var sampleApp = angular.module('sampleApp', ['ngRoute', 'sampleApp.directives']);
 
 //Define Routing for app
 sampleApp.config(['$routeProvider',
@@ -14,28 +14,31 @@ sampleApp.config(['$routeProvider',
 		controller: 'AddHomeController'
 	}).
 	otherwise({
-		redirectTo: '/home'
+		redirectTo: '/reports'
 	});
 }]);
 
+angular.module('sampleApp.directives', []).
+directive('enhanceJqmView', [function() {
+	  return function($scope, el) {
+	        setTimeout(function(){$scope.$on('$viewContentLoaded', el.trigger("create"))});
+	  };
+}]);
 
 sampleApp.controller('AddSwiperScreenController', function($scope) {
 	$scope.message = 'This is Swiper screen';
 	app.initializeTabs();
-	app.initializeSwiperScreen();	
-	app.refreshView();	
+	app.initializeSwiperScreen();
 	
-	$scope.user = {name : 'prad', age: '22'};
-	$scope.save = function(as){
-		alert(as);
+	$scope.user = {name : '', age: '', gender: 'Male'};	
+	$scope.savePatientDetails = function(){
+		alert($scope.user.name + "\n" + $scope.user.age + "\n" + $scope.user.gender);
 	}
-	
 });
 
 sampleApp.controller('AddHomeController', function($scope, $location) {
 	$scope.message = 'This is Home screen';
 	app.setScreenBounds();
-	app.refreshView();	
 	
 	$scope.goto = function(path){
 		cordova.exec(function(successObj) {
