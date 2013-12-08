@@ -14,7 +14,7 @@ sampleApp.config(['$routeProvider',
 		controller: 'AddHomeController'
 	}).
 	otherwise({
-		redirectTo: '/reports'
+		redirectTo: '/home'
 	});
 }]);
 
@@ -30,9 +30,28 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	app.initializeTabs();
 	app.initializeSwiperScreen();
 	
-	$scope.user = {name : '', age: '', gender: 'Male'};	
+	var _name = window.localStorage.getItem("name");
+	var _age = window.localStorage.getItem("age");
+	var _gender = window.localStorage.getItem("gender");
+		
+	$scope.user = {name : _name==null?'':_name, 
+					age: _age==null?'':_age, 
+					gender: _gender==null?'':_gender};
+	
 	$scope.savePatientDetails = function(){
-		alert($scope.user.name + "\n" + $scope.user.age + "\n" + $scope.user.gender);
+		var alertMsg;
+		if(window.localStorage.getItem("name") == $scope.user.name &&
+				window.localStorage.getItem("age") == $scope.user.age &&
+				window.localStorage.getItem("gender") == $scope.user.gender){
+			alertMsg = "No Modifications found."
+		}else{
+			window.localStorage.setItem("name", $scope.user.name);
+			window.localStorage.setItem("age", $scope.user.age);
+			window.localStorage.setItem("gender", $scope.user.gender);
+			
+			alertMsg = "Patient Details Saved.";
+		}		
+		alert(alertMsg);
 	}
 });
 

@@ -15,7 +15,7 @@
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
     <feature name="GetGoogleAccPlugin">
-        <param name="android-package" value="com.phonegap.diabetesrecord.GetGoogleAccountsPlugin" />
+        <param name="android-package" value="com.tracker.diabetesrecord.GetGoogleAccountsPlugin" />
     </feature>
     <access origin="http://127.0.0.1*" />
     <preference name="useBrowserHistory" value="true" />

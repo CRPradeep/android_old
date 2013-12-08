@@ -17,10 +17,12 @@
        under the License.
  */
 
-package com.phonegap.diabetesrecord;
+package com.tracker.diabetesrecord;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+
+import com.tracker.diabetesrecord.R;
 
 public class MainActivity extends CordovaActivity 
 {

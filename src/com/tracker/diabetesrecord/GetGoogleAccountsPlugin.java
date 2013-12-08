@@ -1,4 +1,4 @@
-package com.phonegap.diabetesrecord;
+package com.tracker.diabetesrecord;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;

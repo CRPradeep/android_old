@@ -46,7 +46,7 @@ var app = {
 				slidesPerView : 1.5,
 				offsetSlidesBefore : 0.25,
 				offsetPxAfter : 100,
-				initialSlide: 2,
+				initialSlide: window.localStorage.getItem("name") ==null ? 2 : 0,
 				shortSwipes : true,
 				pagination: document.getElementById("pagination"),
 				createPagination : true,
@@ -65,7 +65,7 @@ var app = {
 			mySwiper = $('.swiper-container').swiper({
 				mode:'horizontal',
 				shortSwipes : true,
-				initialSlide: 2,
+				initialSlide: window.localStorage.getItem("name") ==null ? 2 : 0,
 				onSlideChangeEnd: app.onSlideChanged,
 				loop: false,
 				simulateTouch: false
@@ -119,4 +119,6 @@ var app = {
 		refreshView: function(){
 			$(".apps").trigger("create");
 		},
+		
+		
 };
