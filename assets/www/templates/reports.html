@@ -53,33 +53,66 @@
 					  </tr>
 					  <tr>
 					    <td class="td_label">Age: </td>
-					    <td><input type="number" id="age_field" ng-model="user.age" ng-trim="true"/></td>
+					    <td><input type="number" id="age_field" ng-model="user.age"/></td>
 					  </tr>
+				  </table>
+				  <table class="settings_table">
 					  <tr>
 					    <td class="td_label">Gender: </td>
 					    <td><div data-role="fieldcontain">
 						    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-					         	<input type="radio" name="radio-choice-2" id="sex_male" value="Male" ng-model="user.gender" checked="checked" />
-					         	<label for="sex_male">Male</label>
+					         	<input type="radio" name="radio-choice-2" id="sex_male" value="Male" ng-model="user.gender"/>
+					         	<label for="sex_male"> M </label>
 					
-					         	<input type="radio" name="radio-choice-2" id="sex_female" ng-model="user.gender" value="Female"  />
-					         	<label for="sex_female">Female</label>
+					         	<input type="radio" name="radio-choice-2" id="sex_female" value="Female"  ng-model="user.gender"/>
+					         	<label for="sex_female"> F </label>
 						    </fieldset>
 						</div>	
 						</td>
+						<td class="btn_block">
+							<input ng-if="user.name.length > 0 && user.age > 0 && user.gender != '' " ng-click="savePatientDetails()" class="save_pat_dtls"
+							 type="button" enhance-jqm-view value="Save" data-mini="true"></input>
+						</td>
 					  </tr>
-					</table>
-					
-					<input ng-if="user.name.length > 0 && user.age > 0" ng-click="savePatientDetails()" class="save_pat_dtls"
-						 type="button" enhance-jqm-view value="Save"></input>
-					<div class="clear"></div>
+					</table>					
 					</div>
 					
 					<div class="clear"></div>
 					
 					<div data-role="collapsible">
 						<h3>Alarm Settings</h3>
-						<p>Some Alarm Settings Goes Here...</p>
+						<p class="note">Set alarm to periodically check the BP and/or Blood Sugar.</p>
+						
+						<table class="settings_table">
+						  <tr>
+						    <td class="td_label">Label: </td>
+						    <td><input type="text" id="label_field" ng-trim="true" ng-model="alarm.label"/></td>
+						  </tr>
+						</table>
+						<table class="settings_table">
+						  <tr>
+						    <td class="td_label">Time: </td>
+						    <td><input type="time" id="hour_field" ng-trim="true" max="12" ng-model="alarm.hour"/></td>
+						    <td><input type="time" id="minute_field" ng-trim="true" max="60" ng-model="alarm.minute"/></td>
+						   <!--  <td><select ng-model="alarm.hour"> <option value="1">1</option> <option value="2">2</option> </select></td>
+						    <td><select ng-model="alarm.minute"> <option value="5">5</option> <option value="10">10</option> </select></td> -->
+						  </tr>
+						  <tr>
+						  	<td class="td_label"></td>
+						   	<td>
+							   	<div data-role="fieldcontain">
+								    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+							         	<input type="radio" name="radio-choice-2" id="time_am" ng-model="alarm.period" value="AM" checked="checked" />
+							         	<label for="time_am">AM</label>
+							
+							         	<input type="radio" name="radio-choice-2" id="time_pm" ng-model="alarm.period" value="PM" />
+							         	<label for="time_pm">PM</label>
+								    </fieldset>
+								</div>	
+							</td>
+							<td class="btn_block"><input type="button" ng-click="setAlarm()" value="Save" data-mini="true"/></td>
+						  </tr>
+						</table>						
 					</div>
 					
 					<div data-role="collapsible">

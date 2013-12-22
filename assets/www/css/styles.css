@@ -26,6 +26,18 @@ body {
     width:100%;
 }
 
+table{
+	width: 100% !important;
+}
+
+input[type="radio"]{
+	display: none;
+}
+
+.btn_block .ui-btn{
+	border-radius: 10px !important;
+}
+
 .clear{
 	clear: both;
 }
@@ -102,6 +114,10 @@ body {
 	text-align: center;
 }
 
+.ui-collapsible-content{
+	padding: 0 .5em !important;	
+}
+
 .ui-collapsible-set, .ui-collapsible{
 	padding: 0 5%;
 }
@@ -124,17 +140,20 @@ body {
 
 .details_table td{
 	text-align: left;
-	padding: 1em;
+	padding: .5em;
 	word-break: break-word;
+	font-size: 1em !important;
 }
 
 .settings_table td{
 	text-align: left;
 	word-break: break-word;
+	font-size: 1em !important;
 }
 
 .td_label{
-	width: 40%;
+	width: 30%;
+	text-align: left;
 }
 
 .save_pat_dtls{
@@ -150,4 +169,10 @@ body {
 	background: -moz-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
 	background: -ms-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
 	background: -o-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+}
+
+.note{
+	font-size: .75em;
+	font-weight: normal;
+	color: cornflowerblue;
 }

@@ -31,12 +31,14 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	app.initializeSwiperScreen();
 	
 	var _name = window.localStorage.getItem("name");
-	var _age = window.localStorage.getItem("age");
+	var _age = parseInt(window.localStorage.getItem("age"));
 	var _gender = window.localStorage.getItem("gender");
-		
+	
 	$scope.user = {name : _name==null?'':_name, 
 					age: _age==null?'':_age, 
 					gender: _gender==null?'':_gender};
+	
+	$scope.alarm = {hour : 0, minute : 0, period : 'AM', label : ''};
 	
 	$scope.savePatientDetails = function(){
 		var alertMsg;
@@ -53,9 +55,21 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 		}		
 		alert(alertMsg);
 	}
+	
+	$scope.setAlarm = function(){
+		cordova.exec(function(successObj) {
+			if(successObj != null && successObj.length >0){
+				var alarmDetails = "";
+				alert(successObj);
+			}else{
+				alert("Sorry. An error occurred while setting alarm. Please try again.");
+			}
+		}, function(error) {alert("Sorry. An error occurred while setting alarm. Please try again.");}, "AlarmPlugin",
+		"SET_ALARM", []);
+	}
 });
 
-sampleApp.controller('AddHomeController', function($scope, $location) {
+sampleApp.controller('AddHomeController', function($scope, $location, $http) {
 	$scope.message = 'This is Home screen';
 	app.setScreenBounds();
 	
@@ -76,5 +90,14 @@ sampleApp.controller('AddHomeController', function($scope, $location) {
 			}
 		}, function(error) {alert("Sorry. Your device is not registered with google");}, "GetGoogleAccPlugin",
 		"GET_GOOGLE_ACC", []);
+		
+		
+		/*$http({method: 'GET', url: 'https://accounts.google.com/o/oauth2/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=token&client_id=799913527324-cjaa444df51b5tdba0ok745brkg42aaf.apps.googleusercontent.com'}).
+		  success(function(data, status, headers, config) {
+		    alert("success: "+data);
+		  }).
+		  error(function(data, status, headers, config) {
+			  alert("error: "+data);
+		  });*/
 	}
 });
