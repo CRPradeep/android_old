@@ -2,8 +2,7 @@
 var sampleApp = angular.module('sampleApp', ['ngRoute', 'sampleApp.directives']);
 
 //Define Routing for app
-sampleApp.config(['$routeProvider',
-                  function($routeProvider) {
+sampleApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/reports', {
 		templateUrl: 'templates/reports.html',
@@ -26,19 +25,22 @@ directive('enhanceJqmView', [function() {
 }]);
 
 sampleApp.controller('AddSwiperScreenController', function($scope) {
-	$scope.message = 'This is Swiper screen';
 	app.initializeTabs();
 	app.initializeSwiperScreen();
+
+	$('#hour_field').datetimepicker({
+		datepicker:false,
+		hours12: true,
+		timeHeightInTimePicker: 15,
+		format:'H:i'
+	});
 	
 	var _name = window.localStorage.getItem("name");
 	var _age = parseInt(window.localStorage.getItem("age"));
 	var _gender = window.localStorage.getItem("gender");
 	
-	$scope.user = {name : _name==null?'':_name, 
-					age: _age==null?'':_age, 
-					gender: _gender==null?'':_gender};
-	
-	$scope.alarm = {hour : 0, minute : 0, period : 'AM', label : ''};
+	$scope.user = {name : _name==null?'':_name,  age: _age==null?'':_age, gender: _gender==null?'':_gender};	
+	$scope.alarm = {hour : '00.00', period : 'AM', label : 'Test BP/Sugar Now.'};
 	
 	$scope.savePatientDetails = function(){
 		var alertMsg;
@@ -65,12 +67,11 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 				alert("Sorry. An error occurred while setting alarm. Please try again.");
 			}
 		}, function(error) {alert("Sorry. An error occurred while setting alarm. Please try again.");}, "AlarmPlugin",
-		"SET_ALARM", []);
+		"SET_ALARM", [$scope.alarm.hour, $scope.alarm.label]);
 	}
 });
 
 sampleApp.controller('AddHomeController', function($scope, $location, $http) {
-	$scope.message = 'This is Home screen';
 	app.setScreenBounds();
 	
 	$scope.goto = function(path){

@@ -92,14 +92,8 @@
 						<table class="settings_table">
 						  <tr>
 						    <td class="td_label">Time: </td>
-						    <td><input type="time" id="hour_field" ng-trim="true" max="12" ng-model="alarm.hour"/></td>
-						    <td><input type="time" id="minute_field" ng-trim="true" max="60" ng-model="alarm.minute"/></td>
-						   <!--  <td><select ng-model="alarm.hour"> <option value="1">1</option> <option value="2">2</option> </select></td>
-						    <td><select ng-model="alarm.minute"> <option value="5">5</option> <option value="10">10</option> </select></td> -->
-						  </tr>
-						  <tr>
-						  	<td class="td_label"></td>
-						   	<td>
+						    <td class="thirty_width"><input type="text" id="hour_field" ng-model="alarm.hour" readonly/></td>
+						    <td>
 							   	<div data-role="fieldcontain">
 								    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
 							         	<input type="radio" name="radio-choice-2" id="time_am" ng-model="alarm.period" value="AM" checked="checked" />
@@ -110,6 +104,10 @@
 								    </fieldset>
 								</div>	
 							</td>
+						  </tr>						  
+						  <tr>
+						  	<td class="td_label"></td>
+						   	<td></td>
 							<td class="btn_block"><input type="button" ng-click="setAlarm()" value="Save" data-mini="true"/></td>
 						  </tr>
 						</table>						
@@ -117,7 +115,7 @@
 					
 					<div data-role="collapsible">
 						<h3>Notification Settings</h3>
-						<p>Some Notification Settings Goes Here...</p>
+						<p>Coming Soon...</p>
 					</div>					
 				</div>
 			</div>

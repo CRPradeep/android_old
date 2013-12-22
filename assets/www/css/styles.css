@@ -176,3 +176,12 @@ input[type="radio"]{
 	font-weight: normal;
 	color: cornflowerblue;
 }
+
+#hour_field input{
+	width: 100%;
+}
+
+.thirty_width{
+	width: 35%;
+	min-width: 5em;
+}
