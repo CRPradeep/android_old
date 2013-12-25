@@ -120,5 +120,7 @@ var app = {
 			$(".apps").trigger("create");
 		},
 		
-		
+		refreshRadio: function(){
+			$("input[type='radio']:first").attr("checked",true).checkboxradio("refresh");
+		},
 };

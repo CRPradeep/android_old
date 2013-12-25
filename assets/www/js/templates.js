@@ -39,9 +39,9 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	var _age = parseInt(window.localStorage.getItem("age"));
 	var _gender = window.localStorage.getItem("gender");
 	
-	$scope.user = {name : _name==null?'':_name,  age: _age==null?'':_age, gender: _gender==null?'':_gender};	
+	$scope.user = {name : _name==null ? '' : _name,  age: (_age==null || isNaN(_age)) ? '' : _age, gender: _gender==null ? 'Male': _gender};	
 	$scope.alarm = {hour : '00.00', period : 'AM', label : 'Test BP/Sugar Now.'};
-	
+
 	$scope.savePatientDetails = function(){
 		var alertMsg;
 		if(window.localStorage.getItem("name") == $scope.user.name &&
@@ -60,15 +60,12 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	
 	$scope.setAlarm = function(){
 		$scope.alarm.hour = $("#hour_field").val();
-		/*if($scope.alarm.hour == 0){
-			alert("please select a time between 01.00 and 12.00");
-		}else{*/
-			cordova.exec(
+		cordova.exec(
 					function(successObj) {}, 
 					function(errorObj) {alert("Sorry. An error occurred while setting alarm. Please try again.");}, 
 					"AlarmPlugin", "SET_ALARM", [$scope.alarm.hour.substring(0,2), $scope.alarm.period, $scope.alarm.label]);
-//		}
 	}
+	
 });
 
 sampleApp.controller('AddHomeController', function($scope, $location, $http) {
