@@ -66,6 +66,13 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 					"AlarmPlugin", "SET_ALARM", [$scope.alarm.hour.substring(0,2), $scope.alarm.period, $scope.alarm.label]);
 	}
 	
+	$scope.openGallery = function(){
+		cordova.exec(
+				function(successObj) {alert("WOW..."+successObj);}, 
+				function(errorObj) {alert("OOPS..."+errorObj);}, 
+				"BrowsePicturePlugin", "OPEN_GALLERY", []);
+	}
+	
 });
 
 sampleApp.controller('AddHomeController', function($scope, $location, $http) {

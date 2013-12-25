@@ -63,24 +63,28 @@
 					    <td><div data-role="fieldcontain">
 						    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
 					         	<input type="radio" name="radio-mini" id="sex_male" class="gender_radio" ng-model="user.gender" value="Male"/>
-					         	<label for="sex_male"> M </label>
+					         	<label for="sex_male"> Male </label>
 					
 					         	<input type="radio" name="radio-mini" id="sex_female" class="gender_radio" ng-model="user.gender" value="Female"/>
-					         	<label for="sex_female"> F </label>
+					         	<label for="sex_female"> Female </label>
 						    </fieldset>
 						</div>	
-						</td>
-						<td class="btn_block">
-							<input ng-if="user.name.length > 0 && user.age > 0 && user.gender != '' " ng-click="savePatientDetails()" class="save_pat_dtls"
-							 type="button" enhance-jqm-view value="Save" data-mini="true"></input>
-						</td>
+						</td>				
+					  </tr>
+					  <tr>
+						  <td class="td_label"></td>
+						  <td class="btn_block"><input type="button" ng-click="openGallery()" value="Photo" data-mini="true"/></td>
+						  <td class="btn_block save_user">
+								<input ng-if="user.name.length > 0 && user.age > 0 && user.age != '' && user.gender != '' " ng-click="savePatientDetails()" class="save_pat_dtls"
+								 type="button" enhance-jqm-view value="Save" data-mini="true"></input>
+						  </td>
 					  </tr>
 					</table>					
 					</div>
 					
 					<div class="clear"></div>
 					
-					<div data-role="collapsible" data-collapsed="false">
+					<div data-role="collapsible">
 						<h3>Alarm Settings</h3>
 						<p class="note">Set alarm to periodically check the BP and/or Blood Sugar.</p>
 						
@@ -108,7 +112,7 @@
 						  </tr>						  
 						  <tr>
 						  	<td class="td_label"></td>
-						   	<td></td>
+						  	<td></td>
 							<td class="btn_block"><input type="button" ng-click="setAlarm()" value="Save" data-mini="true"/></td>
 						  </tr>
 						</table>						

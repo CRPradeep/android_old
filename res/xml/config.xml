@@ -20,6 +20,9 @@
     <feature name="AlarmPlugin">
         <param name="android-package" value="com.tracker.diabetesrecord.AlarmPlugin" />
     </feature>
+    <feature name="BrowsePicturePlugin">
+        <param name="android-package" value="com.tracker.diabetesrecord.BrowsePicturePlugin" />
+    </feature>
     <access origin="http://127.0.0.1*" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
