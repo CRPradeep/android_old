@@ -1,8 +1,5 @@
 package com.tracker.diabetesrecord;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -20,6 +17,7 @@ public class AlarmPlugin extends CordovaPlugin{
 		mCallback = callbackContext;
 		if(action.equalsIgnoreCase("SET_ALARM")){
 			int hour;
+			String period = "AM";
 			String label = "Test BP/Sugar Now";
 			/*Calendar cal = new GregorianCalendar();
 			int minute, hour, day;
@@ -30,10 +28,16 @@ public class AlarmPlugin extends CordovaPlugin{
 		    minute = cal.get(Calendar.MINUTE);*/
 			
 			hour = args.getInt(0);
-			label = args.getString(1);
-
+			period = args.getString(1);
+			label = args.getString(2);
+			
+			if(period.equalsIgnoreCase("PM")){
+				hour = hour==0 ? 0 : 12;
+			}
+			
 		    Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
 		    i.putExtra(AlarmClock.EXTRA_HOUR, hour);
+		    i.putExtra(AlarmClock.EXTRA_MINUTES, 0);
 		    i.putExtra(AlarmClock.EXTRA_MESSAGE, label);
 		    i.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
 			

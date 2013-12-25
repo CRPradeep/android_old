@@ -131,10 +131,10 @@
 				i18n:{
 					ru:{
 						months:[
-							'Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
+							'Ð¯Ð½Ð²Ð°Ñ€ÑŒ','Ð¤ÐµÐ²Ñ€Ð°Ð»ÑŒ','ÐœÐ°Ñ€Ñ‚','Ð�Ð¿Ñ€ÐµÐ»ÑŒ','ÐœÐ°Ð¹','Ð˜ÑŽÐ½ÑŒ','Ð˜ÑŽÐ»ÑŒ','Ð�Ð²Ð³ÑƒÑ�Ñ‚','Ð¡ÐµÐ½Ñ‚Ñ�Ð±Ñ€ÑŒ','ÐžÐºÑ‚Ñ�Ð±Ñ€ÑŒ','Ð�Ð¾Ñ�Ð±Ñ€ÑŒ','Ð”ÐµÐºÐ°Ð±Ñ€ÑŒ'
 						],
 						dayOfWeek:[
-							"Вск", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"
+							"Ð’Ñ�Ðº", "ÐŸÐ½", "Ð’Ñ‚", "Ð¡Ñ€", "Ð§Ñ‚", "ÐŸÑ‚", "Ð¡Ð±"
 						]
 					},
 					en:{
@@ -147,7 +147,7 @@
 					},
 					de:{
 						months:[
-							'Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'
+							'Januar','Februar','MÃ¤rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'
 						],
 						dayOfWeek:[
 							"So.", "Mo", "Di", "Mi", "Do", "Fr", "Sa."
@@ -770,7 +770,7 @@
 						currentTime.setMinutes($this.data('minute'));
 						datetimepicker.trigger('select.xdsoft',[currentTime]);
 						
-						datetimepicker.data('input').val( _xdsoft_datetime.str() );
+//						datetimepicker.data('input').val( _xdsoft_datetime.str() );
 						
 						!options.inline&&datetimepicker.trigger('close.xdsoft');
 						

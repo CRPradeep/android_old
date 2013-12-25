@@ -13,7 +13,7 @@ sampleApp.config(['$routeProvider', function($routeProvider) {
 		controller: 'AddHomeController'
 	}).
 	otherwise({
-		redirectTo: '/home'
+		redirectTo: '/reports'
 	});
 }]);
 
@@ -59,15 +59,15 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	}
 	
 	$scope.setAlarm = function(){
-		cordova.exec(function(successObj) {
-			if(successObj != null && successObj.length >0){
-				var alarmDetails = "";
-				alert(successObj);
-			}else{
-				alert("Sorry. An error occurred while setting alarm. Please try again.");
-			}
-		}, function(error) {alert("Sorry. An error occurred while setting alarm. Please try again.");}, "AlarmPlugin",
-		"SET_ALARM", [$scope.alarm.hour, $scope.alarm.label]);
+		$scope.alarm.hour = $("#hour_field").val();
+		/*if($scope.alarm.hour == 0){
+			alert("please select a time between 01.00 and 12.00");
+		}else{*/
+			cordova.exec(
+					function(successObj) {}, 
+					function(errorObj) {alert("Sorry. An error occurred while setting alarm. Please try again.");}, 
+					"AlarmPlugin", "SET_ALARM", [$scope.alarm.hour.substring(0,2), $scope.alarm.period, $scope.alarm.label]);
+//		}
 	}
 });
 

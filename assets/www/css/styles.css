@@ -26,6 +26,10 @@ body {
     width:100%;
 }
 
+div.ui-input-text input.ui-input-text{
+	padding: 0.25em 0!important; 
+}
+
 table{
 	width: 100% !important;
 }
