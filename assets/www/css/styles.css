@@ -170,6 +170,10 @@ input[type="radio"]{
 	font-size: 1em !important;
 }
 
+.settings_table .ui-field-contain{
+	margin: 0 !important;
+}
+
 .td_label{
 	width: 30%;
 	text-align: left;

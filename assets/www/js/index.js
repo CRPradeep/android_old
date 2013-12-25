@@ -19,7 +19,7 @@
 var app = {
 		// Application Constructor
 		initialize: function() {
-			this.bindEvents();
+			this.bindEvents();			
 		},
 		// Bind Event Listeners
 		//
@@ -37,7 +37,7 @@ var app = {
 		// The scope of 'this' is the event. In order to call the 'receivedEvent'
 		// function, we must explicity call 'app.receivedEvent(...);'
 		onDeviceReady: function() {
-			navigator.splashscreen.hide();
+			navigator.splashscreen.hide();			
 		},
 		
 		initializeTabs: function(){
@@ -56,8 +56,7 @@ var app = {
 			});
 			setTimeout(function(){
 				app.alignTabContent();	
-			}, 500);
-			
+			}, 500);			
 		},
 		
 		initializeSwiperScreen: function(){
@@ -118,9 +117,5 @@ var app = {
 		
 		refreshView: function(){
 			$(".apps").trigger("create");
-		},
-		
-		refreshRadio: function(){
-			$("input[type='radio']:first").attr("checked",true).checkboxradio("refresh");
 		},
 };

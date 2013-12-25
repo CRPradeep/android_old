@@ -13,7 +13,7 @@ sampleApp.config(['$routeProvider', function($routeProvider) {
 		controller: 'AddHomeController'
 	}).
 	otherwise({
-		redirectTo: '/reports'
+		redirectTo: '/home'
 	});
 }]);
 
@@ -22,7 +22,42 @@ directive('enhanceJqmView', [function() {
 	  return function($scope, el) {
 	        setTimeout(function(){$scope.$on('$viewContentLoaded', el.trigger("create"))});
 	  };
-}]);
+}])
+.directive('chart', function() {
+        return {
+          restrict: 'A',
+          link: function($scope, $elm, $attr) {
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', '(mg/dl)');
+            data.addColumn('number', 'Blood Sugar');
+            data.addRows([
+              ['January', 300],
+              ['February', 281],
+              ['March', 213],
+              ['April', 207],
+              ['May', 174],
+              ['June', 158],
+              ['July', 140],
+              ['August', 133],
+              ['September', 112],
+              ['October', 120],
+              ['November', 99],
+              ['December', 105],
+            ]);
+
+            var name = window.localStorage.getItem("name") == null ? 'Your' : window.localStorage.getItem("name");
+            // Set chart options
+            var options = {'title': name + "'s BP and Blood Sugar Chart",
+                           'width':window.screen.availWidth-50,
+                           'height':window.screen.availHeight-100};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.ColumnChart($elm[0]);
+            chart.draw(data, options);
+          }
+      }
+ });
 
 sampleApp.controller('AddSwiperScreenController', function($scope) {
 	app.initializeTabs();
@@ -71,7 +106,7 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 				function(successObj) {alert("WOW..."+successObj);}, 
 				function(errorObj) {alert("OOPS..."+errorObj);}, 
 				"BrowsePicturePlugin", "OPEN_GALLERY", []);
-	}
+	}	
 	
 });
 
