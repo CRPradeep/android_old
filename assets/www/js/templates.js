@@ -22,8 +22,8 @@ directive('enhanceJqmView', [function() {
 	  return function($scope, el) {
 	        setTimeout(function(){$scope.$on('$viewContentLoaded', el.trigger("create"))});
 	  };
-}])
-.directive('chart', function() {
+}]);
+/*.directive('chart', function() {
         return {
           restrict: 'A',
           link: function($scope, $elm, $attr) {
@@ -57,7 +57,7 @@ directive('enhanceJqmView', [function() {
             chart.draw(data, options);
           }
       }
- });
+ });*/
 
 sampleApp.controller('AddSwiperScreenController', function($scope) {
 	app.initializeTabs();
@@ -104,7 +104,7 @@ sampleApp.controller('AddSwiperScreenController', function($scope) {
 	$scope.openGallery = function(){
 		cordova.exec(
 				function(successObj) {alert("WOW..."+successObj);}, 
-				function(errorObj) {alert("OOPS..."+errorObj);}, 
+				function(errorObj) {}, 
 				"BrowsePicturePlugin", "OPEN_GALLERY", []);
 	}	
 	

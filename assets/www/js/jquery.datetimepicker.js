@@ -770,7 +770,7 @@
 						currentTime.setMinutes($this.data('minute'));
 						datetimepicker.trigger('select.xdsoft',[currentTime]);
 						
-//						datetimepicker.data('input').val( _xdsoft_datetime.str() );
+						datetimepicker.data('input').val( _xdsoft_datetime.str() );
 						
 						!options.inline&&datetimepicker.trigger('close.xdsoft');
 						

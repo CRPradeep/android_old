@@ -88,16 +88,15 @@ var app = {
 			if(_activeIndex != mySwiper.getFirstSlide().index()){
 				var prevEle = myTabs.getSlide(_activeIndex-1);				
 				$(prevEle).css('text-align','right').trigger("true", 500);
-				$(prevEle).css('color','gray').trigger("true");
+				$(prevEle).css('color','#ccc').trigger("true");
 			}
 			if(_activeIndex != mySwiper.getLastSlide().index()){
 				var nextEle = myTabs.getSlide(_activeIndex+1);				
 				$(nextEle).css('text-align','left').trigger("true", 500);	
-				$(nextEle).css('color','gray').trigger("true");
+				$(nextEle).css('color','#ccc').trigger("true");
 			}
 			var currEle = myTabs.getSlide(_activeIndex);
 			$(currEle).css('text-align','center').trigger("true", 500);
-			$(currEle).css('color','black').trigger("true");
 		},
 		
 		setScreenBounds: function(){

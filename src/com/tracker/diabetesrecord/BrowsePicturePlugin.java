@@ -16,7 +16,7 @@ public class BrowsePicturePlugin extends CordovaPlugin {
 
 	// this is the action code we use in our intent, 
 	// this way we know we're looking at the response from our own action
-	private static final int SELECT_PICTURE = 12345;
+	private static final int REQ_CODE = 12345;
 
 	private String selectedImagePath;
 	private CallbackContext callback;
@@ -28,17 +28,18 @@ public class BrowsePicturePlugin extends CordovaPlugin {
 		// select a file
 		callback = callbackContext;
 		if(action.equalsIgnoreCase("OPEN_GALLERY")){
-			cordova.getThreadPool().execute(new Runnable() {
-	            public void run() {
+			/*cordova.getThreadPool().execute(new Runnable() {
+	            public void run() {*/
 	            	Intent intent = new Intent();
 	    			intent.setType("image/*");
 	    			intent.setAction(Intent.ACTION_GET_CONTENT);
 	    			cordova.getActivity().startActivityForResult(Intent.createChooser(intent,
-	    					"Select Picture"), SELECT_PICTURE);
-	            }
-	        });			
+	    					"Select Picture"), REQ_CODE);
+	    			return true;
+	           /* }
+	        });	*/		
 		}
-		return true;
+		return false;
 	}
 
 	@Override
@@ -46,7 +47,7 @@ public class BrowsePicturePlugin extends CordovaPlugin {
 		super.onActivityResult(requestCode, resultCode, intent);
 		Log.e(getClass().getSimpleName()+"---requestCode", requestCode+"");
 		if (resultCode == Activity.RESULT_OK) {
-			if (requestCode == SELECT_PICTURE) {
+			if (requestCode == REQ_CODE) {
 				Uri selectedImageUri = intent.getData();
 				selectedImagePath = getPath(selectedImageUri);
 				Log.e(getClass().getSimpleName()+"---image_path", selectedImagePath);

@@ -20,7 +20,7 @@
 		<div class="swiper-wrapper">
 			<div id="paient_details_blk" class="screen-one swiper-slide">
 				<div class="details_wrapper" >
-					<div class="photo" ng-class="{male_avatar: user.gender==='Male', female_avatar: user.gender==='Female'}">&nbsp;</div>
+					<div class="photo" ng-click="openGallery()" ng-class="{male_avatar: user.gender==='Male', female_avatar: user.gender==='Female'}">&nbsp;</div>
 					<table class="details_table">
 					  <tr>
 					    <td class="td_label">Name: </td>
@@ -40,7 +40,7 @@
 
 			<div id="reports_blk" class="screen-two swiper-slide">Some
 				Reports of the Blood Sugar and BP goes here
-				<div chart></div>	
+				<div></div>	
 			</div>
 
 			<div id="settings_blk" class="screen-three swiper-slide">
